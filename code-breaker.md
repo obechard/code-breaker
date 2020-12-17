@@ -17,7 +17,7 @@ Next, code the dot. This will get sent to your partner.
 3. Select the squares you want to light up. Make sure it's in the shape of a dot. 
 4. In the radio function, select the ``||radio: radio send number (0)||``. Place this under the ``||basic: show leds||``.
 5. Add the ``||basic: pause (ms)||`` to the sequence. 
-6. Finally, add a second ``||basic: show leds||`` as the last part of the sequence. This will create a pause between your symbols. 
+6. Finally, add a second ``||basic: show leds||`` and ``||basic: pause (ms)||`` as the last part of the sequence. This will create a pause between your symbols. 
 ```blocks
 input.onButtonPressed(Button.A, function () {
     basic.showLeds(`
@@ -48,7 +48,7 @@ This section of code for your dash is going to look almost the same as the one y
 2. Add new ``||basic: show leds||`` to this sequence. Select the squares to make a dash. 
 3. Next, add ``||radio: radio send number||``. Change the 0 to a 1. 
 4. Add ``||basic: pause (ms)||``. 
-5. Finally, add a blank ``||basic: show leds||`` to finish this sequence. 
+5. Finally, add a blank ``||basic: show leds||`` and one more ``||basic: pause(ms)||`` to finish this sequence. 
 ```blocks
 input.onButtonPressed(Button.B, function () {
     basic.showLeds(`
@@ -77,7 +77,7 @@ So your partner knows when your message is finished, we are going to code one mo
 2. Add new ``||basic: show leds||`` to this sequence. Select the squares to make an X. 
 3. Add ``||radio: radio send number||``. Change the 0 to a 2. 
 4. Next, add ``||basic: pause(ms)||``. 
-5. Finally, add blank ``||basic: show leds||`` to finish this sequence.
+5. Finally, add blank ``||basic: show leds||`` and ``||basic: pause (ms)||`` to finish this sequence.
 ```blocks
 input.onGesture(Gesture.Shake, function () {
     basic.showLeds(`
@@ -110,9 +110,10 @@ This last sequence of code will allow you to receive messages from your partner.
 5. Within ``||logic: if…then||`` we need to add ``||basic: show leds||`` under the "if" section. Select all the leds to make a dot. 
 6. Click the plus at the bottom of your ``||logic: if...then||`` block to add another condition to your variable.
 7. Replace the ``||logic: true||`` variable with ``||logic: 0=0||`` and then replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 1. 
-6. Add a second ``||basic: show leds||`` to your sequence. Select the squares to make a dash. 
-7. Click the plus once again to add another ``||logic: if...then||`` block. Add the ``||logic: 0=0||`` block and replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 2.
-8. Add ``||basic: show leds||`` and select the squares to make your X symbol. 
+8. Add a second ``||basic: show leds||`` to your sequence. Select the squares to make a dash. 
+9. Click the plus once again to add another ``||logic: if...then||`` block. Add the ``||logic: 0=0||`` block and replace the first 0 with ``||variable: receivedNumber||``. Change the second 0 to a 2.
+10. Add ``||basic: show leds||`` and select the squares to make your X symbol.
+11. The very last step is to add ``||basic: pause (ms)||`` and a blank ``||basic: show leds||``.   
 ```blocks
 radio.onReceivedString(function (receivedString) {
     let receivedNumber = 0
