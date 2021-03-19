@@ -1,9 +1,11 @@
 # Code Breaker
+Welcome to the Code Breaker tutorial from the Canada Science and Technology Museum.
+This game requires 2 players. You will be coding symbols that make up the Morse Code, a dot and a dash. You'll be able to use these symbols to send coded messages to your partner. Can you crack it?
 
 ## Set radio
 To send your message, set up the radio function. 
-1. In the radio tab, drag in ``||radio: radio set transmit power (7)||`` and place it in ``||basic: on start||``. 
-2. Next, select the ``||radio: radio set group||`` and place it under the first radio block.
+1. In the radio tab, drag in ``||radio:radio set transmit power (7)||`` and place it in ``||basic:on start||``. 
+2. Next, select the ``||radio:radio set group||`` and place it under the first radio block.
 
 ```blocks 
 radio.setTransmitPower(7)
@@ -12,8 +14,8 @@ radio.setGroup(1)
 
 ## Create your dot
 Next, code the dot. This will get sent to your partner. 
-1. Drag in the ``||input: on button A pressed||`` to your workspace. 
-2. Next, drag in the ``||basic:Show leds||`` and nest it in ``||input: on button A pressed||``. 
+1. Drag in the ``||input:on button A pressed||`` to your workspace. 
+2. Next, drag in the ``||basic:Show leds||`` and nest it in ``||input:on button A pressed||``. 
 3. Select the squares you want to light up. Make sure it's in the shape of a dot. 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -233,3 +235,10 @@ radio.onReceivedString(function (receivedString) {
         `)
 })
 ```
+### One Last Step
+
+Congratulations, you have completed the Code Breaker activity. Now it's time to send some secret messages!
+1. Download your code by saving it locally
+2. Drag your save .hex file to your Micro:bit (make sure it is plugged in with your USB). 
+3. Unplug the micro:bit from the computer and add the battery pack. 
+4. Try it out against another player who also has a coded micro:bit in the same radio group.   
